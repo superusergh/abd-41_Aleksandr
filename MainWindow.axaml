@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaCSharp.MainWindow"
+        Title="Система Фитнес-центра">
+<Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition />
+        </Grid.RowDefinitions>
+        
+                <TextBlock Margin="310,0,0,0" VerticalAlignment="Center" Grid.Row="0" >Введите имя клиента: </TextBlock>
+                <TextBox Margin="-340,0,0,0" VerticalAlignment="Center" Grid.Row="0" x:Name="nametext" Height="40" Width="160"/>
+                <Button Margin="640,0,0,0" Grid.Row="0" x:Name="BtnS" Click="BtnSearch">Поиск</Button>
+
+                <Button Grid.Row="0" Margin="0,0,0,0" x:Name="BtnUp" Click="BtnUP">Обновить</Button>
+
+                <Button Grid.Row="0" Margin="100,0,0,0" x:Name="Bt" Click="Btnord">Сортировка фамилии а-я</Button>
+
+        <DataGrid Grid.Row="1" x:Name="ListData" x:CompileBindings="False" ColumnWidth="*">
+                <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                        <DataGridTextColumn Header="Фамилия" Binding="{Binding Fname}"/>
+                        <DataGridTextColumn Header="Имя" Binding="{Binding Iname}"/>
+                        <DataGridTextColumn Header="Номер телефона" Binding="{Binding Tel}"/>
+                        <DataGridTextColumn Header="Дата рождения" Binding="{Binding Dater}"/>
+                        <DataGridTextColumn Header="Пол" Binding="{Binding Pol}"/>
+                        <DataGridTextColumn Header="Скидка, %" Binding="{Binding Skidka}"/>
+                </DataGrid.Columns>
+        </DataGrid>
+</Grid>
+</Window>
